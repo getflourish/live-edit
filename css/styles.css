@@ -1,0 +1,84 @@
+body {
+
+  --DimensionMaxWidth: 826px;
+
+  --ColorWhite: rgba(255, 255, 255, 1.0);
+  --ColorWhite80: rgba(255, 255, 255, 0.8);
+  --ColorPaper: #fafafa;
+
+  --ColorBase: rgba(0, 0, 0, 0.8);
+  --ColorBase60: rgba(0, 0, 0, 0.6);
+
+  --ColorYellow: #ffcc00;
+
+  --ColorTextPrimary: var(--ColorBase);
+  --ColorTextSecondary: var(--ColorBase60);
+
+  --ColorBackground: var(--ColorYellow);
+  --ColorBackgroundDark: #333;
+
+  --UIBorderRadius: 2px;
+  --UIBorderColor: rgba(0, 0, 0, 0.2);
+  --UIFontSize: 16px;
+
+  --FontSansSerif: "Fira Sans";
+
+  --BaseFontSize: 16px;
+
+  --PaddingSectionHorizontal: 3rem;
+
+
+  --ShadowStrength: 0;
+
+  --MarginSection: 1rem;
+
+  font-family: var(--FontSansSerif);
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+    margin-top:0;
+}
+
+p + p {
+  margin-bottom: 1em;
+}
+
+
+html {
+    font-size: var(--BaseFontSize);
+}
+
+body {
+  background: var(--ColorBackground);
+  color: var(--ColorTextPrimary);
+  max-width: var(--DimensionMaxWidth);
+  font-family: var(--FontSansSerif);
+  margin: 0 auto;
+
+}
+
+
+section {
+    background: var(--ColorPaper);
+    border-radius: var(--UIBorderRadius);
+    padding: var(--PaddingSectionHorizontal);
+    margin-top: var(--MarginSection);
+    box-shadow: 0px var(--ShadowStrength) var(--ShadowStrength) rgba(0, 0, 0, 0.2);
+}
+
+.dark {
+    background: var(--ColorBackgroundDark);
+    color: var(--ColorWhite);
+    -webkit-font-smoothing: antialiased;
+}

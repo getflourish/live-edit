@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Live Edit</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- jQuery, just because I don’t care -->
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <!-- Ace Editor -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js"></script>
+    <script src="https://nightwing.github.io/emmet-core/emmet.js"></script>
+    <script src="js/ext-emmet.js"></script>
+
+    <!-- Dat GUI -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.5.1/dat.gui.min.js"></script>
+
+    <!-- Script -->
+    <script src="js/app.js"></script>
+
+</head>
+<body>
+    <section>
+        <h1>Before</h1>
+        <h1>sa</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis ipsam dicta animi, eius, quis rerum aliquid suscipit, ducimus commodi cum reiciendis sint aut obcaecati ullam laboriosam deleniti iure amet natus.</p>
+    </section>
+
+    <section class="dark">
+        <h1>After</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi dolor, eius perspiciatis inventore corrupti dolorem. Sequi assumenda debitis aut rem? Dolorem facere officiis nam cum, magnam dolore nobis sequi numquam!</p>
+    </section>
+
+    <section id="c-insertion"></section>
+
+    <section class="c-editor" id="c-editor">
+    </section>
+
+
+
+<script type="text/javascript">
+
+    /**
+     * Init Ace Editor
+     */
+
+    var editor = ace.edit("c-editor");
+        editor.setTheme("ace/theme/monokai");
+        editor.getSession().setMode("ace/mode/html");
+        editor.setOption("enableEmmet", true);
+        editor.setFontSize(16);
+        editor.setValue("")
+
+    editor.on("change", function (e) {
+        $("#c-insertion").html(editor.getValue())
+    })
+</script>
+</body>
+</html>
